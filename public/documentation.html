@@ -1,0 +1,176 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/offline_assets/bootstrap.min.css">
+    <link rel="stylesheet" href="/offline_assets/bootstrap.min.js">
+
+    <link rel="script" href="/offline_assets/jquery-1.11.1.js">
+
+    <style>
+        *{padding: 0; margin: 0;}
+        .no-padding{padding: 0;}
+        .no-margin{margin: 0;}
+        .header{
+            height: 100%;
+            position: fixed;
+            overflow: scroll;
+            border-right: 1px solid #dcdcdc;
+        }
+        .header ul { padding: 10%; width: 100%; }
+        .header li{ padding: 4% 0; }
+        .header h5{
+            border-bottom: 1px solid;
+            padding: 3%;
+        }
+        .container{float: right;}
+        .row{margin: 2% 3%;}
+        .doc-block{
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2%;
+            position: relative;
+        }
+        .doc-block h4{
+            background-color: #eee;
+            margin: 0;
+            padding: 1% 2%;
+        }
+        .doc-block .content{ padding: 3%; }
+        .doc-block .code{
+            background-color: #59abe3;
+            border-radius: 10px;
+            padding: 1% 3%;
+            margin: 2% 0;
+        }
+        .doc-block .code p{
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            margin: 0.75% 0;
+        }
+        .doc-block .return{
+            position: absolute;
+            top:0;
+            right: 0;
+            padding: 1%;
+            text-align: right;
+            width: 25%;
+        }
+        .doc-block .return p {
+            padding: 1%;
+            display: inline;
+            word-spacing: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="header col-md-3 col-sm-3 col-xs-12 no-padding">
+    <header>
+        <ul>
+            <h5>Jquery</h5>
+            <li><a href="#1">isScrolledIntoView</a></li>
+            <li><a href="#2">SetFullPageBanner</a></li>
+            <li><a href="#3">SetHalfPageBanner</a></li>
+            <li><a href="#4">111111</a></li>
+            <li><a href="#5">111111</a></li>
+            <li><a href="#6">111111</a></li>
+            <li><a href="#7">111111</a></li>
+            <li><a href="#8">111111</a></li>
+            <li><a href="#9">111111</a></li>
+            <li><a href="#10">111111</a></li>
+            <h5>Rails</h5>
+            <li><a href="#11">custom_input_1</a></li>
+            <li><a href="#12">111111</a></li>
+            <li><a href="#13">111111</a></li>
+            <li><a href="#14">111111</a></li>
+            <li><a href="#15">111111</a></li>
+            <li><a href="#16">111111</a></li>
+            <li><a href="#17">111111</a></li>
+            <li><a href="#18">111111</a></li>
+            <li><a href="#19">111111</a></li>
+            <li><a href="#20">111111</a></li>
+            <h5>CSS</h5>
+            <li><a href="#21">Few Defined Classes</a></li>
+            <li><a href="#22">111111</a></li>
+            <li><a href="#23">111111</a></li>
+            <li><a href="#24">111111</a></li>
+            <li><a href="#25">111111</a></li>
+            <li><a href="#26">111111</a></li>
+            <li><a href="#27">111111</a></li>
+            <li><a href="#28">111111</a></li>
+            <li><a href="#29">111111</a></li>
+            <li><a href="#30">111111</a></li>
+        </ul>
+    </header>
+</div>
+<div class="container col-md-9 col-sm-9 col-xs-12 no-padding">
+    <div class="row no-margin">
+
+        <div class="doc-block">
+            <h4 id="1">isScrolledIntoView( )</h4>
+            <div class="return"><p> True / false</p></div>
+            <div class="content">
+                <p>Check if the element is currently shown in viewport.</p>
+                <div class="code">
+                    <p>isScrolledIntoView($(".footer-top"));</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="doc-block">
+            <h4 id="2">SetFullPageBanner( )</h4>
+            <div class="content">
+                <p>Set the Banner image full screen height.</p>
+                <div class="code">
+                    <p>$(window).resize(function(){ SetFullPageBanner(); });</p>
+                    <p>$(window).load(function(){ SetFullPageBanner(); });</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="doc-block">
+            <h4 id="3">SetHalfPageBanner( )</h4>
+            <div class="content">
+                <p>Set the Banner image to 50% of screen height.</p>
+                <div class="code">
+                    <p>$(window).resize(function(){ SetHalfPageBanner(); });</p>
+                    <p>$(window).load(function(){ SetHalfPageBanner(); });</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="doc-block">
+            <h4 id="11">custom_input_1(name, label, value, class_name)</h4>
+            <div class="content">
+                <p>Generates a custom input field with a label with different stylings</p>
+                <div class="code">
+                    <p>custom_input_1("title", "Title", "my title", "juro")</p>
+                </div>
+                <p>Valid <b>class_name</b> value's : "juro", "chisato", "manami", "nariko"</p>
+            </div>
+        </div>
+
+        <div class="doc-block">
+            <h4 id="21">Few Defined Classes</h4>
+            <div class="content">
+                <p>Use it as a class to get its properties</p>
+                <div class="code">
+                    <p>.keep-left</p>
+                    <p>.keep-right</p>
+                    <p>.no-padding</p>
+                    <p>.no-margin</p>
+                    <p>.text-center</p>
+                    <p>.text-left</p>
+                    <p>.text-right</p>
+                    <p>h2.border</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

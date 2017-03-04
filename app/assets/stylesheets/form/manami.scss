@@ -1,0 +1,82 @@
+/* Manami */
+.manami {
+  overflow: hidden;
+}
+
+.input-manami {
+  width: 100%;
+  background: transparent;
+  padding: 1em;
+  margin-bottom: 2em;
+  color: #f48fb1;
+  z-index: 100;
+  opacity: 0;
+}
+
+.label-manami {
+  width: 100%;
+  position: absolute;
+  text-align: left;
+  padding: 0.5em 0;
+  pointer-events: none;
+  font-size: 1em;
+}
+
+.label-manami::before,
+.label-manami::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.label-manami::before {
+  height: 100%;
+  background: #eee;
+  top: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.label-manami::after {
+  height: 2px;
+  background: #6a7989;
+  top: 100%;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.label-content-manami {
+  padding: 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transition: -webkit-transform 0.3s, color 0.3s;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.input-manami:focus,
+.has_value .input-manami {
+  opacity: 1;
+  -webkit-transition: opacity 0s 0.3s;
+  transition: opacity 0s 0.3s;
+}
+
+.input-manami:focus + .label-manami::before,
+.has_value .label-manami::before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.input-manami:focus + .label-manami::after,
+.has_value .label-manami::after {
+  opacity: 0;
+}
+
+.input-manami:focus + .label-manami .label-content-manami,
+.has_value .label-manami .label-content-manami {
+  color: #cbc4c6;
+  -webkit-transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+  transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
+}

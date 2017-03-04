@@ -1,0 +1,62 @@
+@import 'form/core';
+
+/* Juro */
+.juro {
+  overflow: hidden;
+  border: 1px solid #2fa8ec;
+}
+
+.input-juro {
+  position: absolute;
+  z-index: 100;
+  padding: 2.15em 0.75em 0;
+  width: 100%;
+  background: transparent;
+  color: #1784cd;
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.label-juro {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  text-align: left;
+}
+
+.label-content-juro {
+  padding: 2em 1em;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: -webkit-transform 0.3s, color 0.3s;
+  transition: transform 0.3s, color 0.3s;
+
+  text-rendering: geometricPrecision;
+}
+
+.label-juro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0 solid transparent;
+  -webkit-transition: border-width 0.3s, border-color 0.3s;
+  transition: border-width 0.3s, border-color 0.3s;
+}
+
+.input-juro:focus + .label-juro::before,
+.has_value .label-juro::before {
+  border-width: 8px;
+  border-color: #2fa8ec;
+  border-top-width: 2em;
+}
+
+.input-juro:focus + .label-juro .label-content-juro,
+.has_value .label-juro .label-content-juro {
+  color: #fff;
+  -webkit-transform: translate3d(0, -1.5em, 0) scale3d(0.75, 0.75, 1);
+  transform: translate3d(0, -1.5em, 0) scale3d(0.75, 0.75, 1) translateZ(1px);
+}

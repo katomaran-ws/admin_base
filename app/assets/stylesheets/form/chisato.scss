@@ -1,0 +1,88 @@
+@import "form/core";
+
+/* Chisato */
+
+.chisato {
+  padding-top: 1em;
+}
+
+.input-chisato {
+  width: 100%;
+  padding: 0.8em 0.5em;
+  background: transparent;
+  border: 2px solid;
+  color: #b5b5b5;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.label-chisato {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  text-align: left;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  -webkit-transform: translate3d(0, 3em, 0);
+  transform: translate3d(0, 3em, 0);
+}
+
+.label-content-chisato {
+  padding: 0 1em;
+  font-weight: 400;
+  color: #b5b5b5;
+}
+
+.label-content-chisato::after {
+  content: attr(data-content);
+  position: absolute;
+  top: -200%;
+  left: 0;
+  color: #da6484;
+  font-weight: 800;
+}
+
+.input-chisato:focus,
+.has_value .input-chisato {
+  border-color: #da6484;
+}
+
+.input-chisato:focus + .label-chisato,
+.has_value .label-chisato {
+  -webkit-animation: anim-chisato-1 0.3s forwards;
+  animation: anim-chisato-1 0.3s forwards;
+}
+
+.input-chisato:focus + .label-chisato .label-content-chisato,
+.has_value .label-content-chisato {
+  -webkit-animation: anim-chisato-2 0.3s forwards;
+  animation: anim-chisato-2 0.3s forwards;
+}
+
+@-webkit-keyframes anim-chisato-1 {
+  0%, 50% {
+    -webkit-transform: translate3d(0, 3em, 0);
+    transform: translate3d(0, 3em, 0);
+  }
+  51%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes anim-chisato-2 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50%, 51% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    color: transparent;
+    -webkit-transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
+  }
+}
